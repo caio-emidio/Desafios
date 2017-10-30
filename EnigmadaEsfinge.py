@@ -1,3 +1,11 @@
+'''
+Escolha 4 entre 8 cores disponiveis (no caso usei numeros)
+Depois compare sua escolha com a do computador, a cada cor correta na posicao correta voce ganha uma bola preta e a cada cor correta na posicao errada voce ganha uma bola branca.
+Se nao acertar nada, nao ganha nada.
+
+Problema proposto pelo Alysson Rocha no grupo Python Brasil - Programadores do Facebook em 30/10/2017
+'''
+
 import random
 
 #Lista_Jogador = [5,6,3,2]
