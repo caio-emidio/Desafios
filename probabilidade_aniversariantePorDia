@@ -1,0 +1,53 @@
+from random import randint
+
+
+def verifica(listaPad, NumeroAmigos):
+    for i in range(NumeroAmigos):
+        aniv = randint(0, 364)
+        if aniv in listaPad:
+            listaPad.remove(aniv)
+    if len(listaPad) == 0:
+        return 1
+    else:
+        return 0
+
+
+def calc(iteracoes, NumeroAmigos):
+    cont = 0
+    for i in range(iteracoes):
+        listaPad = list(range(365))
+        cont = cont + verifica(listaPad, NumeroAmigos)
+    print(
+        f'Tendo {NumeroAmigos} amigos e rodando o teste {iteracoes} vezes: {cont}. {(cont/iteracoes)*100}%')
+
+
+def main():
+    print("Qual a probabilidade de vc ter no minimo um amigo fazendo aniversario por dia. dado um numero X de amigos")
+
+    iteracoes = 1000
+
+    calc(iteracoes, 1000)
+    calc(iteracoes, 1500)
+    calc(iteracoes, 2000)
+    calc(iteracoes, 2500)
+    calc(iteracoes, 3000)
+    calc(iteracoes, 3500)
+    calc(iteracoes, 4000)
+    calc(iteracoes, 4500)
+    calc(iteracoes, 5000)
+
+
+if __name__ == "__main__":
+    main()
+
+"""
+Tendo 1000 amigos e rodando o teste 1000 vezes: 0. 0.0%
+Tendo 1500 amigos e rodando o teste 1000 vezes: 5. 0.5%
+Tendo 2000 amigos e rodando o teste 1000 vezes: 221. 22.1%
+Tendo 2500 amigos e rodando o teste 1000 vezes: 667. 66.7%
+Tendo 3000 amigos e rodando o teste 1000 vezes: 904. 90.4%
+Tendo 3500 amigos e rodando o teste 1000 vezes: 978. 97.8%
+Tendo 4000 amigos e rodando o teste 1000 vezes: 984. 98.4%
+Tendo 4500 amigos e rodando o teste 1000 vezes: 997. 99.7%
+Tendo 5000 amigos e rodando o teste 1000 vezes: 1000. 100.0%
+"""
